@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 int		ft_putchar(char c);
 
 void	ft_print_row(int x, char a, char b, char c)
