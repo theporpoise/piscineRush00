@@ -3,51 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   rush00.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: echeng <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/17 15:07:08 by echeng            #+#    #+#             */
-/*   Updated: 2016/07/17 15:09:06 by echeng           ###   ########.fr       */
+/*   Created: 2016/10/30 11:50:04 by mgould            #+#    #+#             */
+/*   Updated: 2016/10/30 17:10:07 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putchar(char c);
+void	ft_putchar(char c);
 
-void	ft_print_row(int x, char c, char d)
+void	rush(int x, int y)
 {
-	int i;
+	int xtemp;
+	int ytemp;
 
-	i = 1;
-	while (i <= x)
+	xtemp = x;
+	ytemp = y;
+	while (ytemp > 0)
 	{
-		if (i == 1 || i == x)
+		while (xtemp > 0)
 		{
-			ft_putchar(c);
+			if ((xtemp == 1 && ytemp == 1) || (xtemp == x && ytemp == y) ||
+				(xtemp == x && ytemp == 1) || (xtemp == 1 && ytemp == y))
+				ft_putchar(111);
+			else if ((ytemp == 1 || ytemp == y))
+				ft_putchar(45);
+			else if ((xtemp == 1 || xtemp == x))
+				ft_putchar(124);
+			else
+				ft_putchar(32);
+			xtemp--;
 		}
-		else
-		{
-			ft_putchar(d);
-		}
-		i++;
+		ft_putchar(10);
+		ytemp--;
+		xtemp = x;
 	}
-	ft_putchar('\n');
-}
-
-int		rush00(int x, int y)
-{
-	int i;
-
-	i = 1;
-	while (i <= y)
-	{
-		if (i == 1 || i == y)
-		{
-			ft_print_row(x, 'o', '-');
-		}
-		else
-		{
-			ft_print_row(x, '|', ' ');
-		}
-		i++;
-	}
-	return (0);
 }

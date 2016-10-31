@@ -3,17 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: echeng <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mgould <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/16 19:41:22 by echeng            #+#    #+#             */
-/*   Updated: 2016/07/16 19:41:24 by echeng           ###   ########.fr       */
+/*   Created: 2016/10/30 09:37:36 by mgould            #+#    #+#             */
+/*   Updated: 2016/10/30 17:10:18 by mgould           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	rush00(int x, int y);
+void	ft_putchar(char c);
+void	rush(int x, int y);
 
-int	main(void)
+int		main(void)
 {
-	rush00(5, 3);
+	rush(5, 1);
+	rush(1, 1);
+	rush(0, 0);
+	rush(20, 15);
+	rush(-4, -1);
 	return (0);
 }
